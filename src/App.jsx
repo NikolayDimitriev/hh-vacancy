@@ -1,8 +1,23 @@
 import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { getData } from "./utilts/getData";
+import "./App.css";
+import { Header } from "./components/Header/Header";
+import { Main } from "./components/Main/Main";
+import { Footer } from "./components/Footer/Footer";
 
 export default function App() {
-  useEffect(() => {
+  const dispatch = useDispatch();
 
-  }, [])
-  return <h1> hello world!</h1>;
+  useEffect(() => {
+    dispatch(getData());
+  }, [dispatch]);
+
+  return (
+    <div className="container">
+      <Header />
+      <Main />
+      <Footer />
+    </div>
+  );
 }

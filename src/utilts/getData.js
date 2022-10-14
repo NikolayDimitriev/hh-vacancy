@@ -1,10 +1,17 @@
-import axios from "axios";
-import { loadVacanciesSuccess } from "../redux/actions";
+import { loadVacanciesSuccess, loadVacanciesFailed } from "../redux/actions";
 
 export const getData = () => {
   return async (dispatch) => {
-    const response = await axios.get("https://api.hh.ru/vacancies/");
-
-    dispatch(loadVacanciesSuccess(response.data));
+    await fetch("https://api.hh.ru/vacancies/")
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          console.error("Error fetch");
+          throw Error;
+        }
+      })
+      .then((data) => dispatch(loadVacanciesSuccess(data)))
+      .catch(() => dispatch(loadVacanciesFailed()));
   };
 };

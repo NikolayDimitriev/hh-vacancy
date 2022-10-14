@@ -1,10 +1,14 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import cn from "classnames";
+import { sortVacancies } from "../../redux/actions";
+import { getForm } from "../../utilts/getForm";
 import "./SortForm.css";
 import arrow from "../../assets/arrow.svg";
 import clear from "../../assets/clear.svg";
-import cn from "classnames";
 
 export const SortForm = () => {
+  const dispatch = useDispatch();
   const [inputText, setInputText] = useState("");
   const [open, setOpen] = useState(false);
 
@@ -13,15 +17,18 @@ export const SortForm = () => {
   };
 
   const selectForm = (e) => {
-    if (e.target.classList.contains("select-list__item")) {
-      setInputText(e.target.textContent);
-      setOpen(false);
+    if (!e.target.classList.contains("select-list__item")) {
+      return;
     }
+    dispatch(sortVacancies(getForm(e.target.textContent)));
+    setInputText(e.target.textContent);
+    setOpen(false);
   };
 
   const resetSort = (e) => {
     e.preventDefault();
     if (inputText === "") return;
+    dispatch(sortVacancies(getForm('')));
     setInputText("");
     setOpen(false);
   };

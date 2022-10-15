@@ -1,9 +1,19 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { MainItem } from "../MainItem/MainItem";
+import { showMoreVacancies } from "../../redux/actions";
 import "./Main.scss";
 
 export const Main = () => {
   const vacancies = useSelector((state) => state.vacancies);
+  const isSorting = useSelector((state) => state.isSorting);
+
+  const dispatch = useDispatch();
+
+  const handleBtnClick = (e) => {
+    e.preventDefault();
+
+    dispatch(showMoreVacancies());
+  };
 
   return (
     <main className="main">
@@ -26,6 +36,13 @@ export const Main = () => {
           responsibility={item.snippet.responsibility}
         />
       ))}
+      {vacancies.length < 20 && !isSorting && (
+        <div className="main-button">
+          <button className="main-button__btn" onClick={handleBtnClick}>
+            Show more
+          </button>
+        </div>
+      )}
     </main>
   );
 };

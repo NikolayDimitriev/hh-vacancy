@@ -1,0 +1,13 @@
+.title {
+  font-family: "Rubik", sans-serif;
+  font-size: 4rem;
+  margin-top: 0;
+  margin-bottom: 74px;
+}
+
+@media (max-width: 768px) {
+  .title {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+}

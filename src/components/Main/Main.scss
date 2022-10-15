@@ -1,4 +1,20 @@
 .main {
   display: flex;
   flex-direction: column;
+
+  &-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    &__btn {
+      width: 226px;
+      border: none;
+      outline: none;
+      background-color: #000;
+      color: #fff;
+      font-family: "Formular", sans-serif;
+      padding: 10px 0;
+      cursor: pointer;
+    }
+  }
 }

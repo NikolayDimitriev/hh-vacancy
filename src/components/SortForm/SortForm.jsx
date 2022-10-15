@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import cn from "classnames";
-import { sortVacancies } from "../../redux/actions";
+import { sortVacancies, isSorting } from "../../redux/actions";
 import { getForm } from "../../utilts/getForm";
 import "./SortForm.scss";
 import arrow from "../../assets/arrow.svg";
@@ -21,6 +21,7 @@ export const SortForm = () => {
       return;
     }
     dispatch(sortVacancies(getForm(e.target.textContent)));
+    dispatch(isSorting(true));
     setInputText(e.target.textContent);
     setOpen(false);
   };
@@ -28,7 +29,8 @@ export const SortForm = () => {
   const resetSort = (e) => {
     e.preventDefault();
     if (inputText === "") return;
-    dispatch(sortVacancies(getForm('')));
+    dispatch(sortVacancies(getForm("")));
+    dispatch(isSorting(false));
     setInputText("");
     setOpen(false);
   };

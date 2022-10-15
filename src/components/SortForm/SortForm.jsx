@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import cn from "classnames";
 import { sortVacancies } from "../../redux/actions";
 import { getForm } from "../../utilts/getForm";
-import "./SortForm.css";
+import "./SortForm.scss";
 import arrow from "../../assets/arrow.svg";
 import clear from "../../assets/clear.svg";
 

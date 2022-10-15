@@ -1,4 +1,4 @@
-import "./MainItem.css";
+import "./MainItem.scss";
 
 export const MainItem = ({
   name,

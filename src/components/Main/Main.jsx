@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { MainItem } from "../MainItem/MainItem";
+import "./Main.scss";
 
 export const Main = () => {
   const vacancies = useSelector((state) => state.vacancies);

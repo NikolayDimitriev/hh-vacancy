@@ -1,6 +1,7 @@
+@import "./variables.scss";
+
 .container {
-  max-width: 1196px;
-  margin: auto;
+  margin: 0 $grid_margin;
   padding: 81px 0;
 }
 

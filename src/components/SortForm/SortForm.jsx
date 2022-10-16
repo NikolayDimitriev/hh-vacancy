@@ -39,12 +39,15 @@ export const SortForm = () => {
     <form className="header-form">
       <div className="header-form__block">
         <div className="header-form__item">
-          <label className="header-form__label">Form</label>
+          <label className="header-form__label" htmlFor="select">
+            Form
+          </label>
           <div className="header-form__select" onClick={handleClick}>
             <input
               className="header-form__input"
               readOnly
               placeholder="Not selected"
+              id="select"
               value={inputText}
             />
             <img
@@ -69,10 +72,13 @@ export const SortForm = () => {
         </div>
 
         <div className="header-form__item">
-          <label className="header-form__label">Position</label>
+          <label className="header-form__label" htmlFor="position">
+            Position
+          </label>
           <input
             className="header-form__input"
             readOnly
+            id="position"
             placeholder="Unspecifed"
           />
         </div>

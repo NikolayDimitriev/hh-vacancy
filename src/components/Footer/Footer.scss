@@ -1,3 +1,5 @@
+@import "../../variables.scss";
+
 .footer {
   padding-top: 70px;
   font-family: "Rubik", sans-serif;
@@ -9,14 +11,27 @@
     line-height: 76px;
   }
 
+  &-wrapper {
+    width: $grid_width * 9 + $grid_gutter * 8;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 32px;
+  }
+
   &-form {
     display: flex;
     flex-direction: column;
+    max-width: 405px;
 
     &__elem {
       display: flex;
       flex-direction: column;
       margin-bottom: 29px;
+    }
+
+    &__label {
+      line-height: 160%;
     }
 
     &__input {
@@ -26,7 +41,7 @@
       border-bottom: 1px solid #000;
       color: #000;
       padding: 0;
-      padding-top: 1px;
+      padding-top: 7px;
       padding-bottom: 7px;
 
       &--invalid {
@@ -48,6 +63,103 @@
       border: 1px solid #000000;
       color: #fff;
       padding: 10px 0;
+      margin-top: 3px;
+      margin-bottom: 43px;
+      width: 226px;
+      height: 48px;
+    }
+
+    &__accept {
+      font-family: "Rubik";
+      font-size: 14px;
+      line-height: 160%;
+    }
+
+    &__link {
+      border-bottom: 1px dashed #000000;
+    }
+  }
+
+  &-contact {
+    font-family: "Rubik", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: 353px;
+    min-height: 289px;
+
+    &__text {
+      font-size: 18px;
+      line-height: 160%;
+    }
+
+    &__links {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__phone {
+      font-size: 32px;
+      line-height: 24px;
+      text-decoration: none;
+      color: inherit;
+      outline: none;
+      margin-bottom: 8px;
+    }
+
+    &__email {
+      font-size: 32px;
+      line-height: 32px;
+      text-decoration: none;
+      color: inherit;
+      outline: none;
+    }
+
+    &__address {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__way {
+      display: inline-block;
+      margin-top: 5px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    &__title {
+      font-size: 32px;
+      margin-bottom: 32px;
+    }
+
+    &-wrapper {
+      width: 100%;
+      flex-direction: column;
+      justify-content: start;
+    }
+
+    &-form {
+      width: 100%;
+      max-width: none;
+    }
+
+    &-contact {
+      width: 100%;
+
+      &__text {
+        font-size: 16px;
+      }
+      &__phone {
+        font-size: 22px;
+        line-height: 24px;
+      }
+
+      &__email {
+        font-size: 22px;
+        line-height: 32px;
+      }
     }
   }
 }

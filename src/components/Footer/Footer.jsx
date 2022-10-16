@@ -90,7 +90,7 @@ export const Footer = () => {
               id="name"
               value={name}
               onChange={handleInput}
-              placeholder="Please introduce yourselft"
+              placeholder="Please introduce yourself"
             />
           </div>
           <div className="footer-form__elem">
@@ -126,7 +126,7 @@ export const Footer = () => {
               id="phone"
               value={phone}
               onChange={handleInput}
-              placeholder="+7(999)123-45-78"
+              placeholder="+7 (999) 123-45-78"
             />
           </div>
           <div className="footer-form__elem">
@@ -145,8 +145,37 @@ export const Footer = () => {
           <button className="footer-form__button" type="submit">
             Send
           </button>
+
+          <div className="footer-form__accept">
+            By clicking "Send" you confirm your consent to the&ensp;
+            <span className="footer-form__link">
+              processing of personal data
+            </span>
+          </div>
         </form>
-        <div className="footer-contact"></div>
+        <div className="footer-contact">
+          <span className="footer-contact__text">
+            We will advise you and help you start
+            <br /> a new project
+          </span>
+          <div className="footer-contact__links">
+            <a href="tel:+7 499 391-66-69" className="footer-contact__phone">
+              +7 499 391-66-69
+            </a>
+            <a
+              href="mailto:mail@greensight.ru"
+              className="footer-contact__email"
+            >
+              mail@greensight.ru
+            </a>
+          </div>
+          <div className="footer-contact__address">
+            <span>
+              Moscow, Zelenograd, Central Ave., <br /> bldg. 305, 3rd floor
+            </span>
+            <span className="footer-contact__way">How to get there?</span>
+          </div>
+        </div>
       </div>
     </footer>
   );

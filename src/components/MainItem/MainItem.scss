@@ -25,7 +25,8 @@
   }
 
   &-info {
-    width: $grid_width * 4 + $grid_gutter * 3;
+    max-width: $grid_width * 4 + $grid_gutter * 3;
+    min-width: 232px;
     padding-left: 20px;
 
     &__image {

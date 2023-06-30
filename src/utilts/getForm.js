@@ -1,11 +1,11 @@
 export const getForm = (text) => {
   switch (text) {
     case "Full time":
-      return "fullDay";
+      return "full";
     case "Half time":
-      return "flexible";
+      return "half";
     case "Part time":
-      return "shift";
+      return "part";
     default:
       return "all";
   }

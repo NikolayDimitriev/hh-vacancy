@@ -23,7 +23,7 @@ export default function reducer(state = defaultState, action) {
           action.payload === "all"
             ? state.vacanciesForSort
             : state.vacanciesForSort.filter(
-                (item) => item.schedule.id === action.payload
+                (item) => item.employment.id === action.payload
               ),
       };
     case "SHOW_MORE_VACANCIES":

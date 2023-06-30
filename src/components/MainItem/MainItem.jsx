@@ -5,7 +5,6 @@ import "./MainItem.scss";
 export const MainItem = ({
   name,
   logoUrl,
-  form,
   companyName,
   web,
   address,
@@ -33,10 +32,6 @@ export const MainItem = ({
           </div>
         )}
         <ul className="vacancy-info__list">
-          <li className="vacancy-info__item">
-            <span className="vacancy-info__specification">Form: </span>
-            <span>{form}</span>
-          </li>
           <li className="vacancy-info__item">
             <span className="vacancy-info__specification">Company: </span>
             <span>{companyName}</span>

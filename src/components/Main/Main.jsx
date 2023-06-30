@@ -14,6 +14,7 @@ export const Main = () => {
 
     dispatch(showMoreVacancies());
   };
+  console.log(vacancies);
 
   return (
     <main className="main">
@@ -22,7 +23,6 @@ export const Main = () => {
           key={item.id}
           name={item.name}
           logoUrl={item.employer.logo_urls && item.employer.logo_urls.original}
-          form={item.schedule.name}
           companyName={item.employer.name}
           web={item.employer.alternate_url}
           address={
